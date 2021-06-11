@@ -1,10 +1,13 @@
 import os
 import flask
+import random
+import string
 import json
 from flask import Flask,request, jsonify
 from flask import render_template
 import requests
 
+# set the project root directory as the static folder, you can set others.
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,16 +15,24 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-#https://ui-ux-gameproject-e70cc-default-rtdb.firebaseio.com/.json
-
-@app.route('/users') # http://localhost:5000/zipcode/60050111
+@app.route('/users')
 def get_users():
-    response = requests.get('https://ui-ux-gameproject-e70cc-default-rtdb.firebaseio.com/.json')
-    print(response)
+    response = requests.get('https://ui-ux-gameproject-e70cc-default-rtdb.firebaseio.com/.json').json()
+    return filterResponse(response)
+
+
+def filterResponse(response):
+    for id in response.keys():
+        del response[id]['userEmail']
+    return response
+        
+def get_random_string(length):
+    result_str = ''.join(random.choice(string.ascii_letters) for i in range(length))
+    print(result_str)
 
 #teste localhost
-'''if __name__ == '__main__':
-    app.run(debug=True)'''
+if __name__ == '__main__':
+    app.run(debug=True)
 
 #teste heroku
 if __name__ == "__main__":
