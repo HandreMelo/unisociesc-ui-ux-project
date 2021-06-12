@@ -1,9 +1,70 @@
 h1 {
-    font-weight: bold;
-    color: #ffffff;
+    font-weight: bolder;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.pt-50 {
+    padding-top: 50px;
 }
 
 .navbar {
     background-color: #dddddd;
     box-shadow: 0 10px 5px black;
+    padding: 20px;
+}
+
+.info {
+    background-color: #dddddd;
+    box-shadow: 0 10px 5px black;
+    margin: 20px;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.link {
+    position: relative;
+    z-index: 1;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 90%;
+    left:50%;
+    transform: translateX(-50%);
+    background: #fff;
+    transition: ease-in-out 200ms;
+    z-index: -1;
+}
+
+.link:hover::before {
+    background: #b9fd82;
+    width: 100%;
+    transition: ease-in-out 200ms;
+}
+
+.app-list .app:nth-child(1),
+.app-list .app:nth-child(2),
+.app-list .app:nth-child(3){
+    background-color: #fff;
+    transition: ease-in-out 500ms;
+}
+
+.app-list .app:nth-child(1):hover,
+.app-list .app:nth-child(2):hover,
+.app-list .app:nth-child(3):hover{
+    background-color: #b9fd82;
+    border-radius: 10px;
+    transition: ease-in-out 500ms;
+}
+
+.app-option {
+    background: #fff;
 }

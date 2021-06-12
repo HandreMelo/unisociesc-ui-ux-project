@@ -15,16 +15,24 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/users')
-def get_users():
+@app.route('/users/<game>')
+def get_users(game):
+    print(game)
     response = requests.get('https://ui-ux-gameproject-e70cc-default-rtdb.firebaseio.com/.json').json()
-    return filterResponse(response)
+    return filterResponse(response,game)
 
 
-def filterResponse(response):
-    for id in response.keys():
-        del response[id]['userEmail']
-    return response
+def filterResponse(response, game):
+    if (game not in response.keys()):
+        print("Game não existe")
+        return {}
+    try:
+        for id in response[game].keys():
+            del response[game][id]['userEmail6']
+    except:
+        print("Alguma chave do dicionário não existe")
+        return {}
+    return response[game]
         
 def get_random_string(length):
     result_str = ''.join(random.choice(string.ascii_letters) for i in range(length))
