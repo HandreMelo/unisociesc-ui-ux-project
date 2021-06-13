@@ -12,6 +12,8 @@
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
     </script>
   <link rel="stylesheet" href={{url_for('static', filename='css/styles.css')}} media="screen"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
@@ -22,11 +24,12 @@
   <main role="main">
     <div class="info pt-50">
       <h3>Como acessar os dados</h3>
-      <p>Faça uma requisição GET para este endereço: <a class="link">https://firebase-middleware-2.herokuapp.com/<strong>APP</strong></p>
-      <p>onde <strong>APP</strong> é o código do aplicativo que retornará os dados dos usuários.</p>
-      <p class="game-list">APPs cadastrados: <span class="game">Game1</span>, <span class="game">Game2</span>, <span class="game">Game3</span></p>
+      <p>Faça uma requisição GET para este endereço:</p>
+      <a class="sample">https://firebase-middleware-2.herokuapp.com/<strong>GAME</strong></a>
+      <p>onde <strong>GAME</strong> é o código do game que retornará os dados dos jogadores.</p>
+      <p class="game-list">Games cadastrados: <span class="game">Game1</span>, <span class="game">Game2</span>, <span class="game">Game3</span></p>
       <p></p>
-      <p class="sample">Exemplo: https://firebase-middleware-2.herokuapp.com/<span class="game-option">Game1</span></p>
+      <p>Exemplo:<a target="_blank" href="https://firebase-middleware-2.herokuapp.com/Game1/.json" class="link">https://firebase-middleware-2.herokuapp.com/</a><span class="game-option"><strong>Game1</strong></span></p>
       <!--<p class="sample-copy">Clique na URL para copiar</p>-->
     </div>
     

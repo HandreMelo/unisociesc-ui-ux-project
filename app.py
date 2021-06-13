@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', font_url='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap')
 
 @app.route('/<game>')
 def get_users(game):

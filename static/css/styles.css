@@ -1,12 +1,20 @@
+body {
+    font-size: 20px;
+    background-color: blue;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
 h1 {
     font-weight: bolder;
     color: black;
     text-align: center;
     font-size: 40px;
+    line-height: 50px;
 }
 
 p {
-    font-size: 20px;
+    line-height: 30px;
 }
 
 .pt-50 {
@@ -27,24 +35,14 @@ p {
     box-sizing: border-box;
 }
 
-.link {
+.sample {
+    background: white;
+    color: black;
     position: relative;
     z-index: 1;
 }
 
-.link::before {
-    content: '';
-    position: absolute;
-    height: 20px;
-    width: 90%;
-    left:50%;
-    transform: translateX(-50%);
-    background: #fff;
-    transition: ease-in-out 200ms;
-    z-index: -1;
-}
-
-.link:hover::before {
+.sample:hover {
     background: #b9fd82;
     width: 100%;
     transition: ease-in-out 200ms;
@@ -62,8 +60,30 @@ p {
 }
 
 .game-option {
-    background: #fff;
+    background: #b9fd82;
     transition: ease-in-out 500ms;
+    text-decoration: underline;
 }
 
+.link {
+    color: black;
+}
 
+  @keyframes show2 {
+    0% {background-color: #fff;}
+    50% {background-color: transparent;}
+    100% {background-color: #fff;}
+  }
+
+.link, .game  {
+    background-color: transparent;
+    animation-name: show2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  .game:hover,.game:focus
+  .link:hover,.link:focus,
+  .game-option:hover,.game-option:focus,
+  .game-list span.game:hover, .game-list span.game:focus {
+    animation-play-state: paused;
+  }
