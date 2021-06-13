@@ -50,21 +50,20 @@ p {
     transition: ease-in-out 200ms;
 }
 
-.app-list .app:nth-child(1),
-.app-list .app:nth-child(2),
-.app-list .app:nth-child(3){
+.game-list span.game {
     background-color: #fff;
     transition: ease-in-out 500ms;
 }
 
-.app-list .app:nth-child(1):hover,
-.app-list .app:nth-child(2):hover,
-.app-list .app:nth-child(3):hover{
+.game-list span.game:hover {
     background-color: #b9fd82;
     border-radius: 10px;
     transition: ease-in-out 500ms;
 }
 
-.app-option {
+.game-option {
     background: #fff;
+    transition: ease-in-out 500ms;
 }
+
+
