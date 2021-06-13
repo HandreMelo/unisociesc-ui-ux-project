@@ -1,15 +1,16 @@
 body {
-    font-size: 20px;
+    font-size: 16px;
     background-color: blue;
     font-family: 'Press Start 2P', cursive;
     
 }
 
+
 h1 {
     font-weight: bolder;
     color: black;
     text-align: center;
-    font-size: 40px;
+    font-size: 3em;
     line-height: 50px;
 }
 
@@ -25,6 +26,7 @@ p {
     background-color: #dddddd;
     box-shadow: 0 10px 5px black;
     padding: 20px;
+    border: 2px dashed blue;
 }
 
 .info {
@@ -33,6 +35,7 @@ p {
     margin: 20px;
     padding:20px;
     box-sizing: border-box;
+    border: 2px dashed blue;
 }
 
 .sample {
@@ -40,6 +43,7 @@ p {
     color: black;
     position: relative;
     z-index: 1;
+    word-break: break-all;
 }
 
 .sample:hover {
@@ -67,6 +71,7 @@ p {
 
 .link {
     color: black;
+    word-break: break-all;
 }
 
   @keyframes show2 {
@@ -86,4 +91,19 @@ p {
   .game-option:hover,.game-option:focus,
   .game-list span.game:hover, .game-list span.game:focus {
     animation-play-state: paused;
+  }
+
+  @media only screen and (max-width: 1023px) {
+      p {
+        font-size: 0.8em;
+      }
+      h1 {
+          font-size: 1.2em;
+      }
+      .info {
+          margin: 20px 0;
+      }
+      .navbar {
+          padding: 5px;
+      }
   }
