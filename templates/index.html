@@ -26,11 +26,21 @@
       <h3>Como acessar os dados</h3>
       <p>Faça uma requisição GET para este endereço:</p>
       <a class="sample">https://firebase-middleware-2.herokuapp.com/<strong>GAME</strong></a>
-      <p>onde <strong>GAME</strong> é o código do game que retornará os dados dos jogadores.</p>
+      <p>onde <strong>GAME</strong> é o código do jogo que deseja os dados dos jogadores (em Json).</p>
       <p class="game-list">Games cadastrados: <span class="game">Game1</span>, <span class="game">Game2</span>, <span class="game">Game3</span></p>
       <p></p>
-      <p>Exemplo:<a target="_blank" href="https://firebase-middleware-2.herokuapp.com/Game1/.json" class="link">https://firebase-middleware-2.herokuapp.com/</a><span class="game-option"><strong>Game1</strong></span></p>
-      <!--<p class="sample-copy">Clique na URL para copiar</p>-->
+      <p>Exemplo:</p>
+      <a target="_blank" href="https://firebase-middleware-2.herokuapp.com/Game1" class="link">https://firebase-middleware-2.herokuapp.com/</a><span class="game-option"><strong>Game1</strong></span>
+      <p>Retorno:</p>
+      <code>
+        {</br>
+        &nbsp"dHrXcOoRoPZM1t9HiJzubt9MKPG3": <em>//ID</em></br>
+        &nbsp{</br> 
+        &nbsp&nbsp"userName":"renan2", <em>//Nick do jogador</em></br>
+        &nbsp&nbsp"userScore":0 <em>//Score do jogador</em></br>
+        &nbsp}</br>
+        }
+    </code>
     </div>
     
   </main>
