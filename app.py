@@ -6,12 +6,16 @@ import json
 from flask import Flask,request, jsonify
 from flask import render_template
 import requests
+from flask_cors import CORS, cross_origin
 
 # set the project root directory as the static folder, you can set others.
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 @app.route('/index/')
+@cross_origin()
 def index():
     return render_template('index.html', font_url='https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap')
 
